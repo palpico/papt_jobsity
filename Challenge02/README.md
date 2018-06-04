@@ -3,6 +3,10 @@ Download postman and get information for a superhero from marvel API
 
 First we had to access https://developer.marvel.com/docs register and get an API key.
 
+Before using postman we have to create a hash that will be passed along with out public key and a ts field.
+
+We use MD5 from the string composed with 9762+public_key+private_key
+
 **Get information related to the list of characters of Cable & Deadpool (2004) #46 (Zombie Variant)**
 
 I had to check comic Id so it can be used to access the characters list. For this I used:
