@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-yellow.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <title>Bookshelf Login</title>
+</head>
+<body>
+<header>
+
+</header>
+<section class="login">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+
+            <div class="centered">
+                <img src="./Media/Images/JobsityLogo.svg" alt="logo" class="imagecontainer">
+            </div>
+            <br>
+            <form method="post" name="Form" onsubmit="return validateForm()" action="bookshelf.html">
+                <div class="labeltext">
+                    <strong>
+                        Sign In
+                    </strong>
+                </div>
+                <div class="labeltext">Username</div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" name="username" id="username" required
+                           placeholder="Enter Username ...">
+                </div>
+                <div class="labeltext">Password</div>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="password" name="password" id="password" required
+                           placeholder="Enter Password ...">
+                </div>
+                <br>
+                <label for="remember" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+                    <input type="checkbox" id="remember" class="mdl-switch__input">
+                    <span class="mdl-switch__label">Remember me</span>
+                </label>
+                <br>
+                <br>
+                <div>
+                    <button class="centered mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary ">
+                        Login
+                    </button>
+                </div>
+                <br>
+                <div class="links">
+                    <a href="./forgot.html" class="dark-primary-color-t">
+                        <small class="centered">
+                            Forgot your password?
+                        </small>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    function validateForm() {
+        let u = document.forms["Form"]["username"].value;
+        let p = document.forms["Form"]["password"].value;
+        if (u === "" || p === "") return false;
+    }
+</script>
+</body>
+</html>
