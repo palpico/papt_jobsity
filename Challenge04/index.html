@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/piano.js" defer></script>
+    <title>Challenge 004</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="item3">
+        <span>Piano</span>
+        <div class="center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" preserveAspectRatio="none" width="50%"
+                 height="50%" class="piano">
+                <polygon points="40,50 53,50 53,125 60,125 60,200 40,200 40,50" class="key white" id="1"
+                         data-key="C4" data-freq="261.63"></polygon>
+                <polygon points="53,50 67,50 67,125 53,125 53,50" class="key black" id="2" data-key="Db4" data-freq="277.18"></polygon>
+                <polygon points="67,50 73,50 73,125 80,125 80,200 60,200 60,125 67,125 67,50" class="key white" id="3"
+                         data-key="D4" data-freq="293.66"></polygon>
+                <polygon points="73,50 87,50 87,125 73,125 73,50" class="key black" id="4" data-key="Eb4" data-freq="311.12"></polygon>
+                <polygon points="87,50 87,125 80,125 80,200 100,200 100,50 87,50" class="key white" id="5"
+                         data-key="E4" data-freq="329.63"></polygon>
+                <polygon points="100,50 113,50 113,125 120,125 120,200 100,200 100,50" class="key white" id="6"
+                         data-key="F4" data-freq="349.23"></polygon>
+                <polygon points="113,50 127,50 127,125 113,125 113,50" class="key black" id="7" data-key="Gb4" data-freq="369.99"></polygon>
+                <polygon points="127,50 133,50 133,125 140,125 140,200 120,200 120,125 127,125 127,50" class="key white"
+                         id="8" data-key="G4" data-freq="392.00"></polygon>
+                <polygon points="133,50 147,50 147,125 133,125 133,50" class="key black" id="9" data-key="Ab4" data-freq="415.30"></polygon>
+                <polygon points="147,50 153,50 153,125 160,125 160,200 140,200 140,125 147,125 147,50" class="key white"
+                         id="10" data-key="A4" data-freq="440.00"></polygon>
+                <polygon points="153,50 167,50 167,125 153,125 153,50" class="key black" id="11" data-key="Bb4" data-freq="466.16"></polygon>
+                <polygon points="167,50 180,50 180,200 160,200 160,125 167,125 167,50" class="key white" id="12"
+                         data-key="B4" data-freq="493.88"></polygon>
+                <polygon points="180,50 193,50 193,125 200,125 200,200 180,200 180,50" class="key white" id="13"
+                         data-key="C5" data-freq="523.25"></polygon>
+                <polygon points="193,50 207,50 207,125 193,125 193,50" class="key black" id="14" data-key="Db5" data-freq="554.37"></polygon>
+                <polygon points="207,50 213,50 213,125 220,125 220,200 200,200 200,125 207,125 207,50" class="key white"
+                         id="15" data-key="D5" data-freq="587.33"></polygon>
+                <polygon points="213,50 227,50 227,125 213,125 213,50" class="key black" id="16" data-key="Eb5" data-freq="622.25"></polygon>
+                <polygon points="227,50 240,50 240,50 240,200 220,200 220,125 227,125 227,50" class="key white" id="17"
+                         data-key="E5" data-freq="659.26"></polygon>
+                <polygon points="240,50 253,50 253,125 260,125 260,200 240,200 240,50" class="key white" id="18"
+                         data-key="F5" data-freq="698.46"></polygon>
+                <polygon points="253,50 267,50 267,125 253,125 253,50" class="key black" id="19" data-key="Gb5" data-freq="739.99"></polygon>
+                <polygon points="267,50 273,50 273,125 280,125 280,200 260,200 260,125 267,125 267,50" class="key white"
+                         id="20" data-key="G5" data-freq="783.99"></polygon>
+                <polygon points="273,50 287,50 287,125 273,125 273,50" class="key black" id="21" data-key="Ab5" data-freq="830.61"></polygon>
+                <polygon points="287,50 293,50 293,125 300,125 300,200 280,200 280,125 287,125 287,50" class="key white"
+                         id="22" data-key="A5" data-freq="880.00"></polygon>
+                <polygon points="293,50 307,50 307,125 293,125 293,50" class="key black" id="23" data-key="Bb5" data-freq="932.33"></polygon>
+                <polygon points="307,50 320,50 320,200 300,200 300,125 307,125 307,50" class="key white" id="24"
+                         data-key="B5" data-freq="987.77"></polygon>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<audio data-key="65" id="c_octave1_audio" src="./sounds/note1s.mp3"></audio>
+<!--<script>-->
+    <!--var keys = document.querySelectorAll("polygon");-->
+    <!--for (let i = 0; i < keys.length; i++) {-->
+        <!--keys[i].addEventListener("click", function () {-->
+                <!--play(keys[i].dataset.key)-->
+            <!--}-->
+        <!--)-->
+    <!--}-->
+
+    <!--function play(a) {-->
+        <!--console.log(a);-->
+    <!--}-->
+
+<!--</script>-->
+</body>
+</html>
