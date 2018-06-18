@@ -1,0 +1,29 @@
+{
+  "name": "challenge05",
+  "version": "1.0.0",
+  "description": "Jobsity weekly challenge",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "papt_jobsity"
+  },
+  "keywords": [
+    "05",
+    "challenge",
+    "jobsity"
+  ],
+  "author": "Pablo Pico",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.12.0"
+  }
+}
