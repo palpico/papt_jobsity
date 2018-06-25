@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./scripts/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./styles/material.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./scripts/build/app.bundle.js" defer></script>
+<body>
+
+
+<header class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--4-col-phone">
+        <img src="./images/logo.svg" class="logo" alt="">
+        <img src="./images/type.svg" class="type" alt="">
+    </div>
+    <div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--4-col-phone app-name  top-color">
+        <strong class="app-name top-color">Bookshelf</strong>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone top-color">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right searchField">
+            <label class="mdl-button mdl-js-button mdl-button--icon"
+                   for="fixed-header-drawer-exp">
+                <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" name="search" placeholder="Search..."
+                       id="fixed-header-drawer-exp">
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone profile top-color">
+        <span id="demo-menu-lower-right"
+              class="mdl-button mdl-js-button ">
+            USERNAME
+            <i class="material-icons mdl-button--icon">
+                expand_more
+            </i>
+            <i class="material-icons">
+                face
+            </i>
+        </span>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-right">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+        </ul>
+
+    </div>
+</header>
+<main class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-cell--stretch laterals lateral-left">
+        <!--Menu for mobile device-->
+        <div class="mdl-grid mdl-grid--no-spacing light-blue">
+            <button class="responsive-menu mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-tablet mdl-cell--hide-desktop"
+                    id="menu-bookshelves">
+                <i class="material-icons">menu</i>
+            </button>
+            <ul class="mdl-menu mdl-list mdl-js-menu" for="menu-bookshelves">
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content light-blue">
+                <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                    language
+                </i>
+                <span>Quito</span>
+            </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content light-blue">
+                <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                    language
+                </i>
+                <span>Cartagena</span>
+            </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            language
+                        </i>
+                        <span>
+                            Medellin
+                        </span>
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            phone_iphone
+                        </i>
+                        <span>
+                            Digital
+                        </span>
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            person
+                        </i>
+                        <span>
+                            Personal Loan
+                        </span>
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            local_offer
+                        </i>
+                        <span>
+                            New Releases
+                        </span>
+                    </span>
+                    </a>
+                </li>
+            </ul>
+            <button class="responsive-menu mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-tablet
+                mdl-cell--hide-desktop" id="menu-bookshelves-books">
+                <i class="material-icons">book</i>
+            </button>
+            <ul class="mdl-menu mdl-list mdl-js-menu" for="menu-bookshelves-books">
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        Readings
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        History
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        Read Later
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                            Favorites
+                    </span>
+                    </a>
+                </li>
+            </ul>
+            <button class="responsive-menu  mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-tablet
+                mdl-cell--hide-desktop" id="menu-bookshelves-layoutcover">
+                <i class="material-icons">view_module</i>
+            </button>
+            <button class="responsive-menu mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-desktop
+             mdl-cell--hide-tablet" id="menu-bookshelves-layoutlist">
+                <i class="material-icons">view_list</i>
+            </button>
+        </div>
+        <!--Mune for tablets and desktop-->
+        <ul class="mdl-list menu-places-full mdl-cell--hide-phone menu-tittle">
+            <b class="ol-list-title">MAIN</b>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content light-blue">
+                <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                    language
+                </i>
+                <span>Quito</span>
+            </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content light-blue">
+                <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                    language
+                </i>
+                <span>Cartagena</span>
+            </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            language
+                        </i>
+                        <span>
+                            Medellin
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            phone_iphone
+                        </i>
+                        <span>
+                            Digital
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            person
+                        </i>
+                        <span>
+                            Personal Loan
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            local_offer
+                        </i>
+                        <span>
+                            New Releases
+                        </span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="demo-list-icon mdl-list mdl-cell--hide-phone mdl-cell--stretch menu-tittle">
+            <b class="ol-list-title">YOUR BOOKS</b>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            import_contacts
+                        </i>
+                        <span>
+                            Readings
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            history
+                        </i>
+                        <span>
+                            History
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            bookmark
+                        </i>
+                        <span>
+                            Read Later
+                        </span>
+                    </span>
+                </a>
+            </li>
+            <li class="mdl-list__item">
+                <a class="mdl-navigation__link" href="">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
+                            favorite
+                        </i>
+                        <span>
+                            Favorites
+                        </span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--stretch">
+        <div class="mdl-grid mdl-grid--no-spacing" id="bookshelf-top">
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--hide-phone mdl-cell--stretch">
+                <a class="black-tittle">
+                    New Releases
+                </a>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch center">
+                <button class="transparent-button">
+                    <a class="black">
+                        Release Date
+                    </a>
+                </button>
+                |
+                <button class="transparent-button">
+                    <a class="black">
+                        Popularity
+                    </a>
+                </button>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--hide-phone mdl-cell--stretch">
+                <button class="transparent-button right" id="btnList">
+                    <i class="material-icons light-blue" onclick="switchListView()">view_list</i>
+                </button>
+                <button class="transparent-button right" id="btnCard">
+                    <i class="material-icons light-blue">view_module</i>
+                </button>
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+        </div>
+        <div class="mdl-grid mdl-grid--no-spacing" id="bookshelf">
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_1">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_2">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_3">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_4">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_5">
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_6">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_7">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_8">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_9">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_10">
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_11">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_12">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_13">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_14">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover"
+                 id="book_15">
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            </div>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch laterals lateral-right">
+        <ol class="ol-list">
+            <b class="ol-list-title">MOST READ BOOKS</b>
+            <li class="ol-numbering truncate">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content ol-numbering">
+                1. Hooked: How to Build Habit-Forming Products
+            </span>
+                </a>
+            </li>
+            <li class="ol-numbering truncate">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content ol-numbering">
+                2. The Inevitable: Understanding the 12 Technological Forces That Will
+            </span>
+                </a>
+            </li>
+            <li class="ol-numbering truncate">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content ol-numbering">
+                3. Lean In: Women, Work, and the Will to Lead
+            </span>
+                </a>
+            </li>
+            <li class="ol-numbering truncate">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content ol-numbering">
+                4. Building a Business When There Are No Easy Answers
+            </span>
+                </a>
+            </li>
+            <li class="ol-numbering truncate">
+                <a class="mdl-navigation__link" href="">
+            <span class="mdl-list__item-primary-content ol-numbering">
+                5. How Google Works - A book by Eric Schmidt & Jonathan Rosenberg
+            </span>
+                </a>
+            </li>
+
+        </ol>
+    </div>
+</main>
+
+
+<footer class="mdl-grid footer">
+<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--3-col-phone">
+
+</div>
+<div class="mdl-cell mdl-cell--5-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+
+</div>
+<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--3-col-phone ">
+
+</div>
+<div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--3-col-phone">
+
+</div>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $("#btnCard").click(function () {
+            $(".book_cover").attr('class', 'mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover');
+            $(".layout-card").show(1000);
+            $(".layout-list").css("display", "none");
+        })
+        $("#btnList").click(function () {
+            $(".layout-card").hide(1000);
+            $(".layout-list").css("display", "block");
+            $(".book_cover").attr('class', 'mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--stretch book_cover');
+        })
+    });
+</script>
+
+</body>
+</html>
+

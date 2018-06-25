@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "start": "http-server"
+    "start": "http-server",
+    "build": "babel ./scripts/app.js --presets babel-preset-es2015 --out-file ./scripts/build/app.bundle.js"
   },
   "repository": {
     "type": "git",
