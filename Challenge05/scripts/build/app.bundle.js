@@ -1,50 +1,71 @@
-"use strict";
+'use strict';
 
-var bookCoverContainer = Array.prototype.slice.call(document.getElementById("bookshelf").querySelectorAll(".book_cover"));
+var singleBookUrl = 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
+var apiKey = '&key=AIzaSyAEHBpR09JoTqLw78jIthVwAjL8PCLQ_80';
+var booksDisplayed = 14;
 
-//Single book retrieval, slow bevause we used 15 api calls with different isbn to populate bookshelf
-//let singleBookUrl='https://www.googleapis.com/books/v1/volumes?q=isbn:';
-// let bookID='9781451648546';
-// let book=getBookInfo(singleBookUrl+String(bookID));
-// drawCardContent(book2);
+var myJSONUrl = 'https://raw.githubusercontent.com/palpico/papt_jobsity/develop/Challenge05/Bookinfo.json';
+var myBooks = getBookInfo(myJSONUrl);
+var books = addInfo(myBooks);
 
-//Single books retieval only one call to api, 15 results (max books returned 40)
-var bulkBookUrl = 'https://www.googleapis.com/books/v1/volumes?q=javascript+programming+best&maxResults=15&start-index=16';
+window.onload = function () {
+    drawCardContent(books, booksDisplayed);
+    document.getElementById('btnCard').addEventListener('click', cardDisplay);
+    document.getElementById('btnList').addEventListener('click', listDisplay);
+};
 
 function getBookInfo(url) {
-    var Httpreq = new XMLHttpRequest(); // new request
+    var Httpreq = new XMLHttpRequest();
     Httpreq.open("GET", url, false);
     Httpreq.send(null);
     return JSON.parse(Httpreq.responseText).items;
 }
 
-var books = getBookInfo(bulkBookUrl);
+function addInfo(param) {
+    for (var i = 0; i < param.length; i++) {
+        var completeInfo = getBookInfo(singleBookUrl + param[i].isbn + apiKey);
+        param[i].title = completeInfo[0].volumeInfo.title;
+        param[i].authors = completeInfo[0].volumeInfo.authors;
+        param[i].publishedDate = completeInfo[0].volumeInfo.publishedDate;
+        param[i].pageCount = completeInfo[0].volumeInfo.pageCount;
+        param[i].description = completeInfo[0].volumeInfo.description;
+        param[i].thumbnail = completeInfo[0].volumeInfo.imageLinks.thumbnail;
+    }
+    return param;
+}
 
-window.onload = drawCardContent(books);
+function clearBookshelf() {
+    var parent = document.getElementById("covers");
+    while (parent.firstChild) {
+        parent.firstChild.remove();
+    }
+}
 
-function drawCardContent(info) {
-    for (var i = 0; i <= books.length; i++) {
-        // language=HTML
-        var text = "\n        <div class=\"layout-card\" id=\"layout-card" + i + "\">\n            <div class=\"demo-card-square mdl-card mdl-shadow--2dp img\" onclick=\"modalFunction(" + i + ")\"\n             style=\"background-image:url('" + info[i].volumeInfo.imageLinks.thumbnail + "');\">\n            </div>\n            <div class=\"mdl-card__title\">\n            <b class=\"truncate light-blue\">" + info[i].volumeInfo.title + "</b>\n            </div>\n            <div class=\"mdl-card__supporting-text\">\n            " + info[i].volumeInfo.authors + "\n            </div>\n            <a class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\">\n                    <i class=\"material-icons icons-star light-blue\">star star_half star_border</i></a>\n            </div>\n            <!--The Modal -->\n            <div id=\"myModal" + i + "\" class=\"modal\">\n                <!-- Modal content -->\n                <div class=\"modal-content\">\n                    <span class=\"close" + String(i) + "\">&times;</span>\n                    <div class=\"mdl-grid\">\n                        <div class=\"mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone\">\n                        </div>\n                        <div class=\"mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--hide-phone\">\n                            <img class=\"img-big\" src=\"" + info[i].volumeInfo.imageLinks.thumbnail + "\" alt=\"logo\">\n                        </div>\n                        <div class=\"mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone \n                            modal-content-tittle\">\n                            <div class=\"modal-content\">\n                                <ul class=\"list-modal-content\">\n                                    <li class=\"wrap-text-modal mclb\"><b>" + info[i].volumeInfo.title + "</b> -\n                                    - <b class=\"mcg\">" + info[i].volumeInfo.publishedDate.slice(0, 4) + "</b></li>\n                                    <li class=\"wrap-text-modal mcg\">\n                                        <span style=\"color: #FFFFFF\">by </span>" + info[i].volumeInfo.authors + "</li>\n                                    <li class=\"wrap-text-modal mcw\">" + info[i].volumeInfo.pageCount + " pages</li>\n                                    <br>\n                                    <li class=\"wrap-text-modal mcg\"><b>SUMMARY</b></li>\n                                    <li class=\"wrap-text-modal mcw\">Lorem ipsum dolor sit amet, consectetur adipiscing \n                                    elit. Aliquam lectus tortor, posuere id mattis eget, mollis a nisl. \n                                    Vivamus gravida. </li>\n                                    <li>Rating</li>\n                                    <li>\n                                    <i class=\"material-icons icons-star light-blue\">star star_half star_border</i>\n                                    </li>\n                                    <li class=\"wrap-text-modal\">    \n                                        <button class=\"mdl-button mdl-js-button mdl-button--raised \n                                        mdl-js-ripple-effect mdl-button--primary\">\n                                            Reserve\n                                        </button>\n                                        <button class=\"mdl-button mdl-js-button mdl-button--raised \n                                        mdl-js-ripple-effect mdl-button--primary\">\n                                            <i class=\"material-icons icons-star light-blue\">favorite</i>\n                                        </button>\n                                        <button class=\"mdl-button mdl-js-button mdl-button--raised \n                                        mdl-js-ripple-effect mdl-button--primary\">\n                                            <i class=\"material-icons icons-star light-blue\">bookmark</i>\n                                        </button>\n                                        \n                                    </li>\n                                </ul>\n                            </div>\n                            \n                        </div>\n                        <div class=\"mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"layout-list\" id=\"layout-list" + i + "\">\n            <div class=\"list-button\" onclick=\"modalFunction(" + i + ")\">\n                <b class=\"wrap-text-modal mclb\"><b>" + books[i].volumeInfo.title + "</b> -\n                - <b class=\"mcg\">" + books[i].volumeInfo.publishedDate.slice(0, 4) + "</b></b>\n                <b class=\"wrap-text-modal mcg\">by " + books[i].volumeInfo.authors + "\n                    <b class=\"wrap-text-modal mcw\">" + books[i].volumeInfo.pageCount + " pages</b>\n                </b>\n            </div>\n        </div>\n        ";
-        bookCoverContainer[i].insertAdjacentHTML('afterbegin', text);
+function drawCardContent(info, quantity) {
+    clearBookshelf();
+    var width = 0;
+    var elem = document.getElementById("progressBar");
+    var progress = 100 / booksDisplayed;
+    for (var i = 0; i <= quantity; i++) {
+        var text = '\n        <div class="mdl-cell--20-col mdl-cell--4-col-tablet mdl-cell--4-col-phone book_cover" id="book_' + i + '">\n            <div class="layout-card" id="layout-card' + i + '" onclick="modalFunction(' + i + ')">\n                <img class="img" src="' + info[i].thumbnail + '">\n                </img>\n                <div class="mdl-card__title">\n                <b class="truncate light-blue">' + info[i].title + '</b>\n                </div>\n                <div class="mdl-card__supporting-text">\n                ' + info[i].authors + '\n                </div>\n                <i class="material-icons icons-star light-blue">\n                star star_half star_border\n                </i>\n                </div>\n                <!--The Modal -->\n                <div id="myModal' + i + '" class="modal">\n                    <!-- Modal content -->\n                    <div class="modal-content">\n                        <span class="close' + String(i) + '">&times;</span>\n                        <div class="mdl-grid">\n                            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">\n                            </div>\n                            <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--hide-phone">\n                                <img class="img-big" src="' + info[i].thumbnail + '" alt="logo">\n                            </div>\n                            <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone \n                                modal-content-tittle">\n                                <div class="modal-content">\n                                    <ul class="list-modal-content">\n                                        <li class="wrap-text-modal mclb"><b>' + info[i].title + '</b> -\n                                        - <b class="mcg">' + info[i].publishedDate.slice(0, 4) + '</b></li>\n                                        <li class="wrap-text-modal mcg">\n                                            <span style="color: #FFFFFF">by </span>' + info[i].authors + '</li>\n                                        <li class="wrap-text-modal mcw">' + info[i].pageCount + ' pages</li>\n                                        <br>\n                                        <li class="wrap-text-modal mcg"><b>SUMMARY</b></li>\n                                        <li class="wrap-text-modal mcw">' + info[i].description + '</li>\n                                        <li class="wrap-text-modal">    \n                                            <button class="mdl-button mdl-js-button mdl-button--raised \n                                            mdl-js-ripple-effect mdl-button--primary">\n                                                Reserve\n                                            </button>\n                                            <button class="mdl-button mdl-js-button mdl-button--raised \n                                            mdl-js-ripple-effect mdl-button--primary">\n                                                <i class="material-icons icons-star light-blue">favorite</i>\n                                            </button>\n                                            <button class="mdl-button mdl-js-button mdl-button--raised \n                                            mdl-js-ripple-effect mdl-button--primary">\n                                                <i class="material-icons icons-star light-blue">bookmark</i>\n                                            </button>\n                                        </li>\n                                        <li>\n                                        Rating: \n                                        <a class="mdl-button mdl-js-button">\n                                                <i class="material-icons icons-star light-blue">\n                                                star star_half star_border\n                                                </i>\n                                            </a>\n                                        </li>\n                                    </ul>\n                                </div>\n                                \n                            </div>\n                            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class="layout-list" id="layout-list' + i + '">\n                <div class="list-button" onclick="modalFunction(' + i + ')">\n                    <b class="wrap-text-modal mclb"><b>' + info[i].title + '</b> -\n                    - <b class="mcg">' + info[i].publishedDate.slice(0, 4) + '</b></b>\n                    <b class="wrap-text-modal mcg">by ' + info[i].authors + '\n                        <b class="wrap-text-modal mcw">' + info[i].pageCount + ' pages</b>\n                    </b>\n                </div>\n            </div>\n        </div>\n        ';
+        document.getElementById("covers").insertAdjacentHTML('afterbegin', text);
+        if (width + progress < 100) {
+            width = width + progress;
+            elem.style.width = width + '%';
+            elem.innerHTML = Math.round(width) + '%';
+        } else {
+            elem.style.display = 'none';
+        }
     }
 }
 
 function modalFunction(coverNumber) {
-
-    // Get the modal
     var modal = document.getElementById('myModal' + coverNumber);
-
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close" + coverNumber)[0];
     modal.style.display = "block";
-
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
     };
-
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
@@ -52,9 +73,27 @@ function modalFunction(coverNumber) {
     };
 }
 
-$(document).ready(function () {
-    $("#btnCard").click(function () {
-        $(".layout-card").hide(1000);
-        $(".layout-list").show(1000);
+function listDisplay() {
+    for (var i = 0; i <= booksDisplayed; i++) {
+        var elemCard = document.getElementById('book_' + i);
+        elemCard.style.display = 'none';
+        var elemList = document.getElementById('layout-list' + i);
+        elemList.style.display = 'block';
+    }
+}
+
+function cardDisplay() {
+    for (var i = 0; i <= booksDisplayed; i++) {
+        var elemCard = document.getElementById('book_' + i);
+        elemCard.style.display = '';
+        var elemList = document.getElementById('layout-list' + i);
+        elemList.style.display = 'none';
+    }
+}
+
+function locations(objects, toSearch) {
+    var locationBy = objects.filter(function (objects) {
+        return objects.location === toSearch;
     });
-});
+    drawCardContent(locationBy, locationBy.length);
+}

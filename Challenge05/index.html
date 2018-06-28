@@ -2,38 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="./scripts/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="./scripts/material.min.js"></script>
     <link rel="stylesheet" href="./styles/material.min.css">
     <link rel="stylesheet" href="./styles/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--<script src="./scripts/build/app.bundle.js" defer></script>-->
-    <script src="./scripts/app.js" defer></script>
+    <script src="./scripts/build/app.bundle.js" defer></script>
 <body>
 
 
 <header class="mdl-grid mdl-grid--no-spacing header">
-    <div class="mdl-cell--15-col mdl-cell--2-col-tablet mdl-cell--4-col-phone">
-        <img src="./images/logo.svg" class="logo" alt="">
-        <img src="./images/type.svg" class="type" alt="">
-    </div>
-    <div class="mdl-cell--45-col mdl-cell--6-col-tablet mdl-cell--4-col-phone app-name  top-color">
-        <strong class="app-name top-color">Bookshelf</strong>
-    </div>
-    <div class="mdl-cell--25-col mdl-cell--4-col-tablet mdl-cell--4-col-phone top-color">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                  mdl-textfield--floating-label mdl-textfield--align-right searchField">
-            <label class="mdl-button mdl-js-button mdl-button--icon"
-                   for="fixed-header-drawer-exp">
-                <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" name="search" placeholder="Search..."
-                       id="fixed-header-drawer-exp">
-            </div>
+    <div class="mdl-cell--15-col mdl-cell--2-col-tablet mdl-cell--4-col-phone frame">
+        <div class="logo">
+            <img src="./images/logo.svg" class="logo" alt="">
+            <img src="./images/type.svg" class="type mdl-cell--hide-tablet" alt="">
         </div>
     </div>
-    <div class="mdl-cell--15-col mdl-cell--4-col-tablet mdl-cell--4-col-phone profile">
+    <div class="mdl-cell--45-col mdl-cell--6-col-tablet mdl-cell--hide-phone top-color">
+        <strong class="app-name">Bookshelf</strong>
+    </div>
+    <div class="mdl-cell--25-col mdl-cell--hide-tablet mdl-cell--hide-phone top-color">
+        <div class="searchspcr"></div>
+        <div class="search-box">
+                <i class="material-icons search-icon">search</i>
+                <input class="" type="text" name="search" placeholder="Search...">
+        </div>
+    </div>
+    <div class="mdl-cell--15-col mdl-cell--hide-tablet mdl-cell--hide-phone profile">
         <span id="profile-menu" class="mdl-button mdl-js-button ">
             <span>Jacob Treml&nbsp;&nbsp;&nbsp;</span>
             <i class="material-icons">expand_more</i>&nbsp;
@@ -53,75 +48,55 @@
         <!--Menu for mobile device-->
         <div class="mdl-grid mdl-grid--no-spacing light-blue">
             <button class="responsive-menu mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-tablet mdl-cell--hide-desktop"
-                    id="menu-bookshelves">
+                    id="menu-bookshelves" >
                 <i class="material-icons">menu</i>
             </button>
             <ul class="mdl-menu mdl-list mdl-js-menu" for="menu-bookshelves">
                 <li class="mdl-list__item">
-                    <a class="mdl-navigation__link" href="">
-            <span class="mdl-list__item-primary-content light-blue">
-                <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
-                    language
-                </i>
-                <span>Quito</span>
-            </span>
-                    </a>
-                </li>
-                <li class="mdl-list__item">
-                    <a class="mdl-navigation__link" href="">
-            <span class="mdl-list__item-primary-content light-blue">
-                <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
-                    language
-                </i>
-                <span>Cartagena</span>
-            </span>
-                    </a>
-                </li>
-                <li class="mdl-list__item">
-                    <a class="mdl-navigation__link" href="">
-                    <span class="mdl-list__item-primary-content light-blue">
-                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
-                            language
-                        </i>
-                        <span>
-                            Medellin
+                    <a class="mdl-navigation__link" href="javascript:locations(books,'Quito')" id="mquito">
+                        <span class="mdl-list__item-primary-content light-blue">
+                            <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">language</i>
+                            <span>Quito</span>
                         </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="javascript:locations(books,'Cartagena')" id="mcartagena">
+                        <span class="mdl-list__item-primary-content light-blue">
+                            <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">language</i>
+                            <span>Cartagena</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="javascript:locations(books,'MEdellin')" id="mmedellin">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">language</i>
+                        <span>Medellin</span>
+                    </span>
+                    </a>
+                </li>
+                <li class="mdl-list__item">
+                    <a class="mdl-navigation__link" href="javascript:locations(books,'Digital')" id="mdigital">
+                    <span class="mdl-list__item-primary-content light-blue">
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">phone_iphone</i>
+                        <span>Digital</span>
                     </span>
                     </a>
                 </li>
                 <li class="mdl-list__item">
                     <a class="mdl-navigation__link" href="">
                     <span class="mdl-list__item-primary-content light-blue">
-                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
-                            phone_iphone
-                        </i>
-                        <span>
-                            Digital
-                        </span>
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">person</i>
+                        <span>Personal Loan</span>
                     </span>
                     </a>
                 </li>
                 <li class="mdl-list__item">
                     <a class="mdl-navigation__link" href="">
                     <span class="mdl-list__item-primary-content light-blue">
-                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
-                            person
-                        </i>
-                        <span>
-                            Personal Loan
-                        </span>
-                    </span>
-                    </a>
-                </li>
-                <li class="mdl-list__item">
-                    <a class="mdl-navigation__link" href="">
-                    <span class="mdl-list__item-primary-content light-blue">
-                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">
-                            local_offer
-                        </i>
-                        <span>
-                            New Releases
-                        </span>
+                        <i class="material-icons item-menu mdl-cell--hide-tablet light-blue">local_offer</i>
+                        <span>New Releases</span>
                     </span>
                     </a>
                 </li>
@@ -173,28 +148,28 @@
         <br>
         <ul class="mdl-cell--hide-phone ull light-blue">
             <li class="w-title">MAIN</li>
-            <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons md-18 mdl-cell--hide-tablet light-blue">language</i>
+            <li><a class="mdl-navigation__link" id="dquito" href="javascript:locations(books,'Quito')">
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">language</i>
                 <span class="lbt">Quito</span>
             </a></li>
-            <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">language</i>
+            <li><a class="mdl-navigation__link" id="dcartagena" href="javascript:locations(books,'Cartagena')">
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">language</i>
                 <span class="lbt">Cartagena</span>
             </a></li>
-            <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">language</i>
+            <li><a class="mdl-navigation__link" id="dmedellin" href="javascript:locations(books,'Medellin')">
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">language</i>
                 <span class="lbt">Medellin</span>
             </a></li>
-            <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">phone_iphone</i>
+            <li><a class="mdl-navigation__link" id="ddigital" href="javascript:locations(books,'Digital')">
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">phone_iphone</i>
                 <span class="lbt">Digital</span>
             </a></li>
             <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">person</i>
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">person</i>
                 <span class="lbt">Personal Loans</span>
             </a></li>
             <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">local_offer</i>
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">local_offer</i>
                 <span class="lbt">New Releases</span>
              </a></li>
         </ul>
@@ -202,33 +177,33 @@
         <ul class="mdl-cell--hide-phone ull light-blue">
             <li class="w-title">YOUR BOOKS</li>
             <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">import_contacts</i>
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">import_contacts</i>
                 <span class="lbt">Readings</span>
             </a></li>
             <li><a class="mdl-navigation__link" href="">
-                    <i class="material-icons mdl-cell--hide-tablet light-blue">history</i>
+                    <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">history</i>
                 <span class="lbt">History</span>
                 </a></li>
             <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">bookmark</i>
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">bookmark</i>
                 <span class="lbt">Read Later</span>
             </a></li>
             <li><a class="mdl-navigation__link" href="">
-                <i class="material-icons mdl-cell--hide-tablet light-blue">favorite</i>
+                <i class="material-icons mdl-cell--hide-tablet light-blue" style="font-size: 17px">favorite</i>
                 <span class="lbt">Favorites</span>
             </a></li>
         </ul>
     </div>
     <div class="mdl-cell--70-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell--stretch">
         <div class="mdl-grid mdl-grid--no-spacing" id="bookshelf-top">
-            <div class="mdl-cell--sp-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+            <div class="mdl-cell--spt-col mdl-cell--hide-tablet mdl-cell--hide-phone frame-top">
             </div>
             <div class="mdl-cell--30-col mdl-cell--4-col-tablet mdl-cell--hide-phone mdl-cell--stretch">
                 <a class="black-tittle">
                     New Releases
                 </a>
             </div>
-            <div class="mdl-cell--30-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch center">
+            <div class="mdl-cell--30-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch center frame-top">
                 <button class="transparent-button">
                     <a class="black">
                         Release Date
@@ -241,22 +216,24 @@
                     </a>
                 </button>
             </div>
-            <div class="mdl-cell--30-col mdl-cell--4-col-tablet mdl-cell--hide-phone mdl-cell--stretch">
-                <button class="transparent-button right" id="btnList">
-                    <i class="material-icons light-blue" onclick="switchListView()">view_list</i>
+            <div class="mdl-cell--30-col mdl-cell--4-col-tablet mdl-cell--hide-phone mdl-cell--stretch frm-top-display">
+                <button class="transparent-button right">
+                    <i class="di material-icons light-blue" id="btnList">view_list</i>
                 </button>
-                <button class="transparent-button right" id="btnCard">
-                    <i class="material-icons light-blue">view_module</i>
+                <button class="transparent-button right">
+                    <i class="di material-icons light-blue" id="btnCard">view_module</i>
                 </button>
             </div>
-            <div class="mdl-cell--sp-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
+            <div class="mdl-cell--spt-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
             </div>
+        </div>
+        <div class="mdl-grid mdl-grid--no-spacing" id="myProgress">
+            <div id="progressBar">Loading 1%</div>
         </div>
         <div class="mdl-grid mdl-grid--no-spacing" id="bookshelf">
             <div class="mdl-cell--sp-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--stretch">
             </div>
             <div class="mdl-grid" id="covers">
-
             </div>
             <div class="mdl-cell--sp-col mdl-cell--hide-tablet mdl-cell--hide-phone">
             </div>
@@ -280,21 +257,6 @@
 
     </div>
 </footer>
-
-<script>
-    $(document).ready(function () {
-        $("#btnCard").click(function () {
-            $(".book_cover").attr('class', 'mdl-cell--20-col mdl-cell--4-col-tablet mdl-cell--4-col-phone book_cover');
-            $(".layout-card").show(1000);
-            $(".layout-list").css("display", "none");
-        })
-        $("#btnList").click(function () {
-            $(".layout-card").hide(1000);
-            $(".layout-list").css("display", "block");
-            $(".book_cover").attr('class', 'mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone book_cover');
-        })
-    });
-</script>
 
 </body>
 </html>

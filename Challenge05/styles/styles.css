@@ -31,6 +31,7 @@
 
 .layout-list{
     display: none;
+    width: 100%;
 }
 
 * {
@@ -39,6 +40,11 @@
     border: 0;
     outline: 0;
     font-family: "font_awesome_5_freeregular", Arial, sans-serif;
+}
+
+.mi{
+    vertical-align: sub;!important;
+    font-size: 17px;!important;
 }
 
 .truncate {
@@ -54,6 +60,11 @@
     background-color: transparent;!important;
 
 }
+
+.di{
+    font-size: 25px;
+}
+
 .lbt{
     color: #7FCCEA;!important;
     letter-spacing: -0.5px;
@@ -77,12 +88,30 @@ div:last-child {
 }
 
 .app-name {
-    font-size: 27px;
+    padding-left: 22px;
+    font-size: 22px;
     font-family: "font_awesome_5_brandsregular";
     line-height: 75px;
     text-align: left;
     font-weight: 900;!important;
+
 }
+
+.search-box{
+    line-height: 33px;
+    border: 2px solid #6EC1E4;
+    border-radius: 25px;
+    max-width: 95%;
+    background-color: #ffffff;
+}
+
+.searchspcr{
+    height: 22px;
+}
+.search-icon{
+
+}
+
 .top-color{
     background-color: #FDF9F5;
 }
@@ -92,18 +121,57 @@ div:last-child {
     vertical-align: top;
 }
 
-.logo {
-    max-height: 90%;
-    max-width: 20%;
-    margin: auto;
-    display: table-cell;
+.frame {
+    line-height: 45px;
+    height: 25px;      /* equals max image height */
+    width: 120px;
+    white-space: nowrap;
+    text-align: center; margin: 1em 0;
+}
+
+.frame-top {
+    line-height: 45px;
+    height: 25px;      /* equals max image height */
+    width: 120px;
+    white-space: nowrap;
+    text-align: center; margin: 1em 0;
+}
+
+.frm-top-display{
+    line-height: 45px;
+    height: 25px;      /* equals max image height */
+    width: 120px;
+    white-space: nowrap;
+    text-align: right; margin: 1em 0;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
     vertical-align: middle;
+}
+
+.logo {
+    padding-left: 15px;
+    vertical-align: middle;
+    max-height: 45px;
+    max-width: 120px;
+    width: 50%;
+}
+
+.type {
+    padding-left: 5px;
+    vertical-align: middle;
+    max-height: 25px;
+    max-width: 100px;
+    width: 100%;
 }
 
 .profile {
     line-height: 80px;
     text-align: right;
     height: 72px;
+    overflow: hidden;
 }
 
 #profile-menu{
@@ -118,15 +186,9 @@ div:last-child {
     border: 2px solid #6EC1E4;
 }
 
-.type {
-    margin-left: 4%;
-    max-width: 45%;
-    width: 100%;
-}
 
 .searchField {
-    border-radius: 75px;
-    border: 3px solid #6EC1E4;
+    display: inline-block;
 }
 
 #bookshelf-top{
@@ -151,19 +213,23 @@ header{
 }
 
 .mdl-cell--25-col{
-    width: 25.4%;
+    width: 20.4%;
 }
 
 .mdl-cell--30-col{
-    width: 30%;
+    width: 28.66667%;
 }
 
 .mdl-cell--45-col{
-    width: 45.4%;
+    width: 50.4%;
 }
 
 .mdl-cell--sp-col{
     width: 5%;
+}
+
+.mdl-cell--spt-col{
+    width: 7%;
 }
 
 .ull{
@@ -195,11 +261,6 @@ i{
 }
 .spc-l{
     height: 32px;
-}
-
-.material-icons{
-    vertical-align: sub;!important;
-    font-size: 17px;
 }
 
 #covers{
@@ -299,7 +360,7 @@ i{
 }
 
 .right{
-    float: right;
+    float: revert;
 }
 
 .center{
@@ -314,6 +375,9 @@ i{
     color: #000000;
     font-weight: bolder;
     font-size: 16px;
+    text-align: left; margin: 1em 0;
+    line-height: 85px;
+
 }
 
 .book-tittle{
@@ -364,8 +428,21 @@ i{
     color: #AEAEAE;
 }
 
+#myProgress {
+    width: 100%;
+}
+
+#progressBar{
+    width: 1%;
+    max-width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #7fccea;
+}
+
 /* The Close Button */
-.close0,.close1,.close2,.close3,.close4,.close5,.close6,.close7,.close8,.close9,.close10,.close11,.close12,.close13,.close14,.close15 {
+span[class^="close"] {
     color: #aaaaaa;
     float: right;
     font-size: 40px;
