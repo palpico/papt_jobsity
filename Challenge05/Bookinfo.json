@@ -1,0 +1,125 @@
+{
+  "kind": "books#volumes",
+  "items": [
+    {
+      "isbn": "9781451648546",
+      "location": "Quito",
+      "rating": "4.5",
+      "available": "true"
+    },
+    {
+      "isbn": "9781548828547",
+      "location": "Cartagena",
+      "rating": "4",
+      "available": "true"
+    },
+    {
+      "isbn": "9781593272821",
+      "location": "Medellin",
+      "rating": "3.2",
+      "available": "true"
+    },
+    {
+      "isbn": "9780986307652",
+      "location": "Quito",
+      "rating": "2.3",
+      "available": "true"
+    },
+    {
+      "isbn": "9781544267449",
+      "location": "Digital",
+      "rating": "4.4",
+      "available": "true"
+    },
+    {
+      "isbn": "9781547027873",
+      "location": "Cartagena",
+      "rating": "4.5",
+      "available": "true"
+    },
+    {
+      "isbn": "9780596554873",
+      "location": "Digital",
+      "rating": "4.1",
+      "available": "true"
+    },
+    {
+      "isbn": "9781118524404",
+      "location": "Quito",
+      "rating": "3.6",
+      "available": "true"
+    },
+    {
+      "isbn": "9781783551705",
+      "location": "Medelin",
+      "rating": "3.3",
+      "available": "true"
+    },
+    {
+      "isbn": "9781548054816",
+      "location": "Quito",
+      "rating": "2",
+      "available": "true"
+    },
+    {
+      "isbn": "9780470633908",
+      "location": "Digital",
+      "rating": "3",
+      "available": "true"
+    },
+    {
+      "isbn": "9780137084760",
+      "location": "Cartagena",
+      "rating": "5",
+      "available": "true"
+    },
+    {
+      "isbn": "9781449396947",
+      "location": "Medelin",
+      "rating": "1",
+      "available": "true"
+    },
+    {
+      "isbn": "9781118903438",
+      "location": "Quito",
+      "rating": "2",
+      "available": "true"
+    },
+    {
+      "isbn": "9788441533974",
+      "location": "Digital",
+      "rating": "3.2",
+      "available": "true"
+    },
+    {
+      "isbn": "9781449331818",
+      "location": "Digital",
+      "rating": "4.4",
+      "available": "true"
+    },
+    {
+      "isbn": "9781680502701",
+      "location": "Quito",
+      "rating": "4.6",
+      "available": "true"
+    },
+    {
+      "isbn": "9781849693134",
+      "location": "Cartagena",
+      "rating": "3",
+      "available": "true"
+    },
+    {
+      "isbn": "9780763780609",
+      "location": "Medelin",
+      "rating": "5",
+      "available": "true"
+    },
+    {
+      "isbn": "9781430241713",
+      "location": "Cartagena",
+      "rating": "4",
+      "available": "true"
+    }
+  ]
+}
