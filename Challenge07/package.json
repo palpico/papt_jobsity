@@ -1,16 +1,40 @@
 {
-  "name": "bookshelf",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
-  },
+  "name": "challenge07",
+  "version": "1.0.0",
+  "description": "React App",
+  "main": "./app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "client-install": "cd client && npm install",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js  --watch",
+    "client": "npm start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "papt-jobsity"
+  },
+  "keywords": [
+    "challenge",
+    "07",
+    "node",
+    "api",
+    "jws",
+    "react",
+    "bookshelf"
+  ],
+  "author": "Pablo Pico",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.6",
+    "morgan": "^1.9.0",
+    "concurrently": "^3.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }

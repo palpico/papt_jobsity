@@ -1,0 +1,8 @@
+{
+  "env": {
+    "MONGO_ATLAS_PW": "admin12345.",
+    "MONGO_CLOUD":"admin:admin12345.@papt-shard-00-00-cvkle.mongodb.net:27017,papt-shard-00-01-cvkle.mongodb.net:27017,papt-shard-00-02-cvkle.mongodb.net:27017/test?ssl=true&replicaSet=papt-shard-0&authSource=admin",
+    "MONGO_LOCAL": "localhost:27017/bookshelf",
+    "JWT_KEY": "secret_key"
+  }
+}
