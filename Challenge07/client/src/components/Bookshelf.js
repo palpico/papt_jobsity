@@ -3,14 +3,28 @@ import {Typography, IconButton, Button, Grid} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import {ViewList, ViewModule} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {OrderOptionsT} from '../TextStore';
+import {MainMenuI, OrderOptionsT} from '../TextStore';
 import Books from './Book';
+
+const bookAPI = 'http://localhost:9000/book';
+const booksDisplayed = 14;
+
+let myBooks = getBookInfo(bookAPI);
 
 const styles = theme => ({
     button: {
         margin: theme.spacing.unit,
     },
 });
+
+function getBookInfo(url) {
+    let Httpreq = new XMLHttpRequest(); // new request
+    Httpreq.overrideMimeType("application/json");
+    Httpreq.open("GET", url, false);
+    Httpreq.send(null);
+    let books = JSON.parse(Httpreq.responseText).books;
+    return books;
+}
 
 class Bookshelf extends React.Component {
     render() {
@@ -29,9 +43,11 @@ class Bookshelf extends React.Component {
                     </Grid>
                 </Grid>
                 <Grid container spacing={0}>
-                    <Grid item xs={2}>
-                        <Books/>
-                    </Grid>
+                    {myBooks.map(book =>
+                        <Grid item xs={2}>
+                            <Books bookInfo={book} key={book._id}/>
+                        </Grid>
+                    )}
                 </Grid>
             </Fragment>
         )

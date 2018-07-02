@@ -7,7 +7,6 @@ exports.book_get_all = (req, res, next) => {
         .exec()
         .then(docs => {
             const response = {
-                count: docs.length,
                 books: docs.map(doc => {
                     return {
                         _id: doc._id,

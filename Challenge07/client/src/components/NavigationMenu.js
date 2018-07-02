@@ -14,7 +14,7 @@ class NavigationMenu extends React.Component {
                         {MainMenuT}
                     </ListSubheader>
                     {MainMenuI.map(item =>
-                        <ListItem button>
+                        <ListItem button key={item[2]}>
                             <ListItemIcon style={{color: '#7FCCEA'}}>
                                 <Language/>
                             </ListItemIcon>
@@ -27,7 +27,7 @@ class NavigationMenu extends React.Component {
                         {YourBooksMenuT}
                     </ListSubheader>
                     {YourBookMenuI.map(item =>
-                        <ListItem button>
+                        <ListItem button key={item[2]}>
                             <ListItemIcon style={{color: '#7FCCEA'}}>
                                 <Language/>
                             </ListItemIcon>
