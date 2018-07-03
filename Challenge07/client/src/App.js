@@ -10,13 +10,13 @@ class App extends Component {
         return (
             <Grid container spacing={0}>
                         <Header/>
-                <Grid item xs={2}>
+                <Grid item style={{width: "15%"}}>
                         <NavigationMenu/>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item style={{width: "70%"}}>
                     <Bookshelf/>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item style={{width: "15%"}}>
                         <MostRead/>
                 </Grid>
             </Grid>

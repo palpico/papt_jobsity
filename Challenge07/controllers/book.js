@@ -3,7 +3,7 @@ const Book = require("../models/book");
 
 exports.book_get_all = (req, res, next) => {
     Book.find()
-        .select('isbn title author location rating pages summary available book_type')
+        .select('isbn title authors location rating pageCount description available thumbnail publishedDate bookType')
         .exec()
         .then(docs => {
             const response = {
@@ -11,7 +11,16 @@ exports.book_get_all = (req, res, next) => {
                     return {
                         _id: doc._id,
                         isbn: doc.isbn,
-                        title: doc.title
+                        title: doc.title,
+                        authors: doc.authors,
+                        location: doc.location,
+                        rating: doc.rating,
+                        pageCount: doc.pageCount,
+                        description: doc.description,
+                        available: doc.available,
+                        thumbnail: doc.thumbnail,
+                        publishedDate: doc.publishedDate,
+                        bookType: doc.bookType
                     };
                 })
             };
@@ -29,13 +38,15 @@ exports.book_create = (req, res, next) => {
     const book = new Book({
         isbn: req.body.isbn,
         title: req.body.title,
-        author: req.body.author,
+        authors: req.body.authors,
         location: req.body.location,
         rating: req.body.rating,
-        pages: req.body.pages,
-        summary: req.body.summary,
+        pageCount: req.body.pageCount,
+        description: req.body.description,
         available: req.body.available,
-        book_type: req.body.book_type
+        thumbnail: req.body.thumbnail,
+        publishedDate: req.body.publishedDate,
+        bookType: req.body.bookType
     });
     book
         .save()
@@ -60,7 +71,7 @@ exports.book_create = (req, res, next) => {
 
 exports.book_get = (req, res, next) => {
     Book.findById(req.params.bookId)
-        .select('isbn title author location rating pages summary available book_type')
+        .select('isbn title authors location rating pageCount description available thumbnail publishedDate bookType')
         .exec()
         .then(book => {
             console.log("From database", book);

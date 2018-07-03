@@ -1,4 +1,3 @@
-import BookshelfComponent from './BookshelfComponent';
-import {postBook} from './BooksImport';
+import populateBooks from './BooksImport';
 
-export {BookshelfComponent, postBook};
+export {populateBooks };

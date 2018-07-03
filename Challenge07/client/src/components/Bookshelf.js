@@ -3,11 +3,11 @@ import {Typography, IconButton, Button, Grid} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import {ViewList, ViewModule} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {MainMenuI, OrderOptionsT} from '../TextStore';
+import {OrderOptionsT} from '../TextStore';
 import Books from './Book';
 
 const bookAPI = 'http://localhost:9000/book';
-const booksDisplayed = 14;
+const booksDisplayed = 15;
 
 let myBooks = getBookInfo(bookAPI);
 
@@ -31,7 +31,6 @@ class Bookshelf extends React.Component {
         return (
             <Fragment>
                 <Grid container spacing={0}>
-                    <Grid item xs={1}/>
                     <Grid item xs={2}>
                         <BookshelfTitle/>
                     </Grid>
@@ -43,11 +42,17 @@ class Bookshelf extends React.Component {
                     </Grid>
                 </Grid>
                 <Grid container spacing={0}>
-                    {myBooks.map(book =>
-                        <Grid item xs={2}>
-                            <Books bookInfo={book} key={book._id}/>
-                        </Grid>
-                    )}
+                    <Grid item style={{width: "5%"}}>
+                    </Grid>
+                    <Grid container spacing={0}>
+                        {(myBooks.slice(0, booksDisplayed)).map(book =>
+                            <Grid item key={"Grid" + book._id} style={{width: "20%"}}>
+                                <Books bookInfo={book} key={"book" + book._id}/>
+                            </Grid>
+                        )}
+                    </Grid>
+                    <Grid item style={{width: "5%"}}>
+                    </Grid>
                 </Grid>
             </Fragment>
         )
@@ -57,7 +62,7 @@ class Bookshelf extends React.Component {
 class BookshelfTitle extends React.Component {
     render() {
         return (
-            <Typography variant="subheading" color="inherit">
+            <Typography variant="subheading" color="inherit" style={{height: "75px", verticalAlign: "middle"}}>
                 New Releases
             </Typography>
         );
@@ -68,7 +73,9 @@ class OrderOptions extends React.Component {
     render() {
         return (
             <Fragment>
-                <Button>{OrderOptionsT[0]}</Button> | <Button>{OrderOptionsT[1]}</Button>
+                <Button style={{height: "75px"}}>{OrderOptionsT[0]}</Button>
+                |
+                <Button style={{height: "75px"}}>{OrderOptionsT[1]}</Button>
             </Fragment>
         );
     }

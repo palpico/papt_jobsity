@@ -5,7 +5,6 @@ import {ExpandMore} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
 import {AppNameT} from '../TextStore';
 import SearchField from './Search';
-// import Styles from '../styles/styles.css';
 
 const styles = {
     root: {
@@ -24,19 +23,19 @@ class Header extends React.Component {
 
     render() {
         return (
-            <Grid item xs={12}>
-                <AppBar position="static" style={{paddingLeft: 0, paddingRight: 0, backgroundColor:'#FFFFFF'}}>
+            <Grid item xs={12} style={{height: "80px"}}>
+                <AppBar position="static" style={{paddingLeft: 0, paddingRight: 0, backgroundColor:'#FFFFFF',height: "80px" }}>
                     <Toolbar style={{paddingLeft: 0, paddingRight: 0}}>
-                        <Grid item xs={2}>
+                        <Grid item style={{width: "15%"}}>
                             <Logo/>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item style={{width: "50%"}}>
                             <Title/>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item style={{width: "20%"}}>
                             <SearchField/>
                         </Grid>
-                        <Grid item xs={2}>
+                        <Grid item style={{width: "15%"}}>
                             <Profile/>
                         </Grid>
                     </Toolbar>
@@ -91,7 +90,7 @@ class Profile extends React.Component {
                     <Button
                         onClick={this.handleMenu}
                     >
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="body1">
                             {username}
                         </Typography>
                         <ExpandMore/>
