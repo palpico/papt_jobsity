@@ -9,11 +9,16 @@ export class Book extends React.Component {
                 <img src={this.props.bookInfo.thumbnail}
                      style={{width: "84%", height: "240px", display: "block", margin: "auto"}}
                      alt=""/>
-                <Typography gutterBottom variant="caption" component="h2" noWrap>
+                <Typography gutterBottom variant="body2" style={{color: "#6EC1E4"}} noWrap>
                     {this.props.bookInfo.title}
                 </Typography>
+                <Typography gutterBottom variant="caption" noWrap>
+                    {(this.props.bookInfo.authors).map(author =>
+                        <span>{author}</span>
+                    )}
+                </Typography>
                 <BookModal bookInfo={this.props.bookInfo}/>
-                </div>
+            </div>
         )
     }
 }

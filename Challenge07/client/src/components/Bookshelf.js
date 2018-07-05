@@ -31,13 +31,13 @@ class Bookshelf extends React.Component {
         return (
             <Fragment>
                 <Grid container spacing={0}>
-                    <Grid item xs={2}>
+                    <Grid item xs={3}>
                         <BookshelfTitle/>
                     </Grid>
-                    <Grid item xs={5}>
+                    <Grid item xs={6}>
                         <OrderOptions/>
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={3} style={{display: "inline-block"}}>
                         <DisplayOptions/>
                     </Grid>
                 </Grid>
@@ -75,7 +75,7 @@ class OrderOptions extends React.Component {
             <Fragment>
                 <Button style={{height: "75px"}}>{OrderOptionsT[0]}</Button>
                 |
-                <Button style={{height: "75px"}}>{OrderOptionsT[1]}</Button>
+                <Button style={{height: "75px" }}>{OrderOptionsT[1]}</Button>
             </Fragment>
         );
     }
@@ -86,10 +86,10 @@ class DisplayOptions extends React.Component {
     render() {
         return (
             <Fragment>
-                <IconButton aria-label="ViewModule" style={{color: '#7FCCEA'}}>
+                <IconButton aria-label="ViewModule" style={{color: '#7FCCEA', float:"right"}}>
                     <ViewModule/>
                 </IconButton>
-                <IconButton aria-label="ViewList" style={{color: '#7FCCEA'}}>
+                <IconButton aria-label="ViewList" style={{color: '#7FCCEA', float:"right" }}>
                     <ViewList/>
                 </IconButton>
             </Fragment>
