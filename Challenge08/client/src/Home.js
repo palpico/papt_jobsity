@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header,NavigationMenu,Bookshelf,MostRead} from './components/';
+import {Header,NavigationMenu,Bookshelf,MostRead} from './components/home';
 import {Grid} from '@material-ui/core';
 
 

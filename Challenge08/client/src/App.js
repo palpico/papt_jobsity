@@ -11,6 +11,7 @@ import './App.css';
 const App = () => (
     <Router><div>
             <Route exact path="/" component={Login}/>
+            <Route exact path="/login" component={Login}/>
             <Route path="/home" component={Home}/>
         </div>
     </Router>

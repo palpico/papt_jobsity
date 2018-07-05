@@ -3,8 +3,9 @@ import {AppBar, Toolbar, Typography, Button, MenuItem, Menu, Grid} from '@materi
 import {withStyles} from '@material-ui/core/styles';
 import {ExpandMore} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {AppNameT} from '../TextStore';
+import {AppNameT} from '../../TextStore';
 import SearchField from './Search';
+import {Logo} from '../common'
 
 const styles = {
     root: {
@@ -45,16 +46,6 @@ class Header extends React.Component {
     }
 }
 
-class Logo extends React.Component {
-    render() {
-        return (
-            <div className="logo">
-                <img src={require('../images/logo.svg')} alt=""/>
-                <img src={require('../images/type.svg')} alt=""/>
-            </div>
-        );
-    }
-}
 
 class Title extends React.Component {
     render() {
