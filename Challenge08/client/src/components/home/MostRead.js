@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {List, ListSubheader, ListItem, ListItemText, Typography} from '@material-ui/core';
-import {MostReadMenuT, MostReadMenuI} from '../TextStore';
+import {MostReadMenuT, MostReadMenuI} from '../../TextStore';
 
 
 class MostRead extends React.Component {

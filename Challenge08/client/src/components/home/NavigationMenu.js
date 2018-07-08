@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {List, ListSubheader, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import {Language} from '@material-ui/icons/';
-import {MainMenuT, MainMenuI, YourBooksMenuT, YourBookMenuI} from '../TextStore';
+import {MainMenuT, MainMenuI, YourBooksMenuT, YourBookMenuI} from '../../TextStore';
 
 
 class NavigationMenu extends React.Component {

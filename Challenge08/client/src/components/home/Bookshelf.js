@@ -3,7 +3,7 @@ import {Typography, IconButton, Button, Grid} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import {ViewList, ViewModule} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {OrderOptionsT} from '../TextStore';
+import {OrderOptionsT} from '../../TextStore';
 import Books from './Book';
 
 const bookAPI = 'http://localhost:9000/book';

@@ -19,15 +19,10 @@ Go to project folder and install the dependencies,
 $ cd projectfolder
 $ npm install
 ```
-install client dependencies,
+install react dependencies,
 
 ```sh
 $ npm run client-install
-```
-install server dependencies,
-
-```sh
-$ npm run server-install
 ```
 and start the server.
 

@@ -3,7 +3,7 @@ import {Grid, TextField} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import {Search} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {SearchT} from '../TextStore';
+import {SearchT} from '../../TextStore';
 
 const styles = {};
 

@@ -85,7 +85,7 @@ class Profile extends React.Component {
                             {username}
                         </Typography>
                         <ExpandMore/>
-                        <img className="img-profile" src={require('../images/profile.png')} alt=""/>
+                        <img className="img-profile" src={require('../../images/profile.png')} alt=""/>
                     </Button>
                     <Menu
                         id="menu-appbar"
