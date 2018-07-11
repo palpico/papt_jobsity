@@ -1,8 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import {Modal, Button, Grid} from '@material-ui/core';
+
 
 function getModalStyle() {
     const top = 50;
@@ -27,30 +28,16 @@ const styles = theme => ({
 });
 
 class BookModal extends React.Component {
-    state = {
-        open: false,
-    };
-
-    handleOpen = () => {
-        this.setState({open: true});
-    };
-
-    handleClose = () => {
-        this.setState({open: false});
-    };
-
     render() {
         const {classes} = this.props;
-
         return (
-        <Fragment>
-            <Button onClick={this.handleOpen}>More Info / Reserve</Button>
             <div>
                 <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
-                    open={this.state.open}
-                    onClose={this.handleClose}
+                    open={this.props.open}
+                    onClose={this.props.handleClose}
+                    onEscapeKeyDown={this.props.handleClose}
                 >
                     <Grid container style={getModalStyle()} className={classes.paper}>
                         <Grid item xs={4}>
@@ -68,7 +55,9 @@ class BookModal extends React.Component {
                             <Typography style={{color: "#ffffff"}}>
                                 {"by "}
                                 {(this.props.bookInfo.authors).map(author =>
-                                    <span key={"mauthor" + (this.props.bookInfo.authors).slice(0,4)}>{author}</span>
+                                    <span
+                                        key={"mauth" + (this.props.bookInfo.authors).slice(0, 4) + Math.floor(Math.random() * 10)}>
+                                        {author}</span>
                                 )}
                             </Typography>
                             <Typography style={{color: "#ffffff"}}>
@@ -86,7 +75,6 @@ class BookModal extends React.Component {
                     </Grid>
                 </Modal>
             </div>
-        </Fragment>
         );
     };
 }

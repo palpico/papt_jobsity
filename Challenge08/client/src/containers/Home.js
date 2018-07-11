@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Header, NavigationMenu, Bookshelf, MostRead} from '../components/home/index';
-import {Grid, Button} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import {getBook} from '../config';
 
 class Home extends Component {

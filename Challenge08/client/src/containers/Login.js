@@ -55,7 +55,8 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{width: "50%",
+                margin: "auto"}}>
                 <Logo/>
                 <form>
                     <div>

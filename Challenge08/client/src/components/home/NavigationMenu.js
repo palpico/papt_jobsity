@@ -8,7 +8,7 @@ class NavigationMenu extends React.Component {
     render() {
         return (
             <Fragment>
-                <List style={{backgroundColor: '#231F20'}}>
+                <List style={{backgroundColor: '#231F20', height: '100%'}}>
                     <ListSubheader style={{color: '#FFFFFF'}}>
                         {mainMenuT}
                     </ListSubheader>
@@ -20,8 +20,6 @@ class NavigationMenu extends React.Component {
                             <ListItemText disableTypography style={{color: '#7FCCEA'}} primary={item[0]}/>
                         </ListItem>
                     )}
-                </List>
-                <List style={{backgroundColor: '#231F20'}}>
                     <ListSubheader style={{color: '#FFFFFF'}}>
                         {yourBooksMenuT}
                     </ListSubheader>
