@@ -1,14 +1,24 @@
 import React from 'react';
+import '../../styles/styles_all.css';
 
-class Logo extends React.Component {
+class LogoWide extends React.Component {
     render() {
         return (
-            <div className="logo">
-                <img src={require('../../images/logo.svg')} alt=""/>
-                <img src={require('../../images/type.svg')} alt=""/>
+            <div>
+                <img src={require('../../images/logowide.svg')} className="logo" alt=""/>
             </div>
         );
     }
 }
 
-export default Logo;
+class Logo extends React.Component {
+    render() {
+        return (
+            <div>
+                <img src={require('../../images/logo.svg')} className="logo" alt=""/>
+            </div>
+        );
+    }
+}
+
+export {Logo, LogoWide};

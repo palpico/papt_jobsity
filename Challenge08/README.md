@@ -39,3 +39,10 @@ Endpoint will be listening on http://localhost:9000/
 
 React will be listening on http://localhost:3000/
 
+For loading example users and books visit http://localhost:3000/example 
+and click the load example data button
+
+default example user information
+email: admin@example.com
+password: admin
+

@@ -1,3 +1,3 @@
-import Logo from './Logo';
+import {Logo, LogoWide} from './Logo';
 
-export {Logo};
+export {Logo, LogoWide};

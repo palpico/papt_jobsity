@@ -28,5 +28,15 @@
   "license": "MIT",
   "dependencies": {
     "concurrently": "^3.6.0"
+  },
+  "quokka" : {
+    "babel" : {
+      "ignore" : "node_modules/(?!lodash-es)"
+    },
+    "env": {
+      "params" : {
+        "env" : "BABEL_ENV=test"
+      }
+    }
   }
 }

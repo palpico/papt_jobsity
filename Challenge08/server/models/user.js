@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 
 const userModel = new Schema({
     name: { type:String, required:true },
-    surname: { type: String},
-    nick: { type: String},
+    surname: { type: String , default:""},
+    nick: { type: String , default:""},
     email: {
         type: String,
         required:true,
@@ -15,7 +15,8 @@ const userModel = new Schema({
     },
     password: { type: String, required:true },
     role: { type: String, default:"user" },
-    image: { type: String }
+    location: {type: String, default:""},
+    image: { type: String , default:""}
 });
 
 module.exports = mongoose.model('User', userModel);

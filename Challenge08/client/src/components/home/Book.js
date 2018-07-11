@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardActions, CardContent, Typography} from '@material-ui/core/';
+import {Typography} from '@material-ui/core/';
 import BookModal from './BookModal';
 
 export class Book extends React.Component {
@@ -14,13 +14,13 @@ export class Book extends React.Component {
                 </Typography>
                 <Typography gutterBottom variant="caption" noWrap>
                     {(this.props.bookInfo.authors).map(author =>
-                        <span>{author}</span>
+                        <span key={"bauthor" + (this.props.bookInfo.authors).slice(0,4)}>{author}</span>
                     )}
                 </Typography>
                 <BookModal bookInfo={this.props.bookInfo}/>
             </div>
-        )
-    }
+        );
+    };
 }
 
 export default Book;

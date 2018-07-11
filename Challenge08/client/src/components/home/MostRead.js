@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {List, ListSubheader, ListItem, ListItemText, Typography} from '@material-ui/core';
-import {MostReadMenuT, MostReadMenuI} from '../../TextStore';
+import {mostReadMenuT, mostReadMenuI} from '../../config/TextStore';
 
 
 class MostRead extends React.Component {
@@ -9,9 +9,9 @@ class MostRead extends React.Component {
             <Fragment>
                 <List style={{backgroundColor: '#231F20', height: '100%'}}>
                     <ListSubheader style={{color: '#FFFFFF'}}>
-                        {MostReadMenuT}
+                        {mostReadMenuT}
                     </ListSubheader>
-                    {MostReadMenuI.map(item =>
+                    {mostReadMenuI.map(item =>
                         <ListItem button key={item[1]}>
                             <ListItemText>
                                 <Typography noWrap style={{color: '#A8A8A8', fontSize: '12px'}}>
@@ -23,8 +23,8 @@ class MostRead extends React.Component {
                 </List>
             </Fragment>
 
-        )
-    }
+        );
+    };
 }
 
 export default (MostRead);

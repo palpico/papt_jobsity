@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {List, ListSubheader, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import {Language} from '@material-ui/icons/';
-import {MainMenuT, MainMenuI, YourBooksMenuT, YourBookMenuI} from '../../TextStore';
+import {mainMenuT, mainMenuI, yourBooksMenuT, yourBookMenuI} from '../../config';
 
 
 class NavigationMenu extends React.Component {
@@ -10,9 +10,9 @@ class NavigationMenu extends React.Component {
             <Fragment>
                 <List style={{backgroundColor: '#231F20'}}>
                     <ListSubheader style={{color: '#FFFFFF'}}>
-                        {MainMenuT}
+                        {mainMenuT}
                     </ListSubheader>
-                    {MainMenuI.map(item =>
+                    {mainMenuI.map(item =>
                         <ListItem button key={item[2]}>
                             <ListItemIcon style={{color: '#7FCCEA'}}>
                                 <Language/>
@@ -23,9 +23,9 @@ class NavigationMenu extends React.Component {
                 </List>
                 <List style={{backgroundColor: '#231F20'}}>
                     <ListSubheader style={{color: '#FFFFFF'}}>
-                        {YourBooksMenuT}
+                        {yourBooksMenuT}
                     </ListSubheader>
-                    {YourBookMenuI.map(item =>
+                    {yourBookMenuI.map(item =>
                         <ListItem button key={item[2]}>
                             <ListItemIcon style={{color: '#7FCCEA'}}>
                                 <Language/>
@@ -35,9 +35,8 @@ class NavigationMenu extends React.Component {
                     )}
                 </List>
             </Fragment>
-
-        )
-    }
+        );
+    };
 }
 
 export default (NavigationMenu);

@@ -3,13 +3,10 @@ import {Typography, IconButton, Button, Grid} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import {ViewList, ViewModule} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {OrderOptionsT} from '../../TextStore';
+import {orderOptionsT} from '../../config/';
 import Books from './Book';
 
-const bookAPI = 'http://localhost:9000/book';
 const booksDisplayed = 15;
-
-let myBooks = getBookInfo(bookAPI);
 
 const styles = theme => ({
     button: {
@@ -17,16 +14,13 @@ const styles = theme => ({
     },
 });
 
-function getBookInfo(url) {
-    let Httpreq = new XMLHttpRequest(); // new request
-    Httpreq.overrideMimeType("application/json");
-    Httpreq.open("GET", url, false);
-    Httpreq.send(null);
-    let books = JSON.parse(Httpreq.responseText).books;
-    return books;
-}
-
 class Bookshelf extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+
+    }
     render() {
         return (
             <Fragment>
@@ -45,18 +39,18 @@ class Bookshelf extends React.Component {
                     <Grid item style={{width: "5%"}}>
                     </Grid>
                     <Grid container spacing={0}>
-                        {(myBooks.slice(0, booksDisplayed)).map(book =>
+                        {this.props.myBooks!==[] ? (this.props.myBooks.slice(0, booksDisplayed)).map(book =>
                             <Grid item key={"Grid" + book._id} style={{width: "20%"}}>
-                                <Books bookInfo={book} key={"book" + book._id}/>
+                                <Books bookInfo={book}/>
                             </Grid>
-                        )}
+                        ) : <Typography>No books found</Typography>}
                     </Grid>
                     <Grid item style={{width: "5%"}}>
                     </Grid>
                 </Grid>
             </Fragment>
-        )
-    }
+        );
+    };
 }
 
 class BookshelfTitle extends React.Component {
@@ -66,19 +60,19 @@ class BookshelfTitle extends React.Component {
                 New Releases
             </Typography>
         );
-    }
+    };
 }
 
 class OrderOptions extends React.Component {
     render() {
         return (
             <Fragment>
-                <Button style={{height: "75px"}}>{OrderOptionsT[0]}</Button>
+                <Button style={{height: "75px"}}>{orderOptionsT[0]}</Button>
                 |
-                <Button style={{height: "75px" }}>{OrderOptionsT[1]}</Button>
+                <Button style={{height: "75px"}}>{orderOptionsT[1]}</Button>
             </Fragment>
         );
-    }
+    };
 }
 
 
@@ -86,15 +80,15 @@ class DisplayOptions extends React.Component {
     render() {
         return (
             <Fragment>
-                <IconButton aria-label="ViewModule" style={{color: '#7FCCEA', float:"right"}}>
+                <IconButton aria-label="ViewModule" style={{color: '#7FCCEA', float: "right"}}>
                     <ViewModule/>
                 </IconButton>
-                <IconButton aria-label="ViewList" style={{color: '#7FCCEA', float:"right" }}>
+                <IconButton aria-label="ViewList" style={{color: '#7FCCEA', float: "right"}}>
                     <ViewList/>
                 </IconButton>
             </Fragment>
         );
-    }
+    };
 }
 
 Bookshelf.propTypes = {

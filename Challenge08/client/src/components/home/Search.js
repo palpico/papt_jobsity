@@ -3,7 +3,7 @@ import {Grid, TextField} from '@material-ui/core';
 import {withStyles} from '@material-ui/core/styles';
 import {Search} from '@material-ui/icons/';
 import PropTypes from 'prop-types';
-import {SearchT} from '../../TextStore';
+import {searchT} from '../../config';
 
 const styles = {};
 
@@ -16,12 +16,12 @@ class SearchField extends React.Component {
                         <Search/>
                     </Grid>
                     <Grid item>
-                        <TextField label={SearchT}/>
+                        <TextField label={searchT}/>
                     </Grid>
                 </Grid>
             </Fragment>
         );
-    }
+    };
 }
 
 SearchField.propTypes = {

@@ -1,3 +1,3 @@
-import LoginForm from './LoginForm';
+import Profile from './Profile';
 
-export {LoginForm};
+export { Profile};
